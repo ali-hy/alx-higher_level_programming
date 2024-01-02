@@ -3,7 +3,7 @@ def islower(c):
     if (ord(c) >= ord('a') and ord('c') <= ord('z')):
         return True
     return False
-    
+
 
 def toupper(c):
     if islower(c):
@@ -15,4 +15,3 @@ def uppercase(str):
     for c in str:
         print(toupper(c), end='')
     print('\n', end='')
-
