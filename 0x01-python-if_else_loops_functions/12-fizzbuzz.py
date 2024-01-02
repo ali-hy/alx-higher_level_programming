@@ -3,7 +3,8 @@ def fizzbuzz():
     fizzstop = 3
     buzzstop = 5
 
-    for i in range(101):
+    for i in range(100):
+        i = i + 1
         number = True
         if i % fizzstop == 0:
             print('Fizz', end='')
