@@ -13,5 +13,5 @@ def toupper(c):
 
 def uppercase(str):
     for c in str:
-        print(toupper(c), end='')
+        print("{}".format(toupper(c)), end='')
     print('\n', end='')
