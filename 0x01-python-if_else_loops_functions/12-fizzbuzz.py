@@ -14,5 +14,3 @@ def fizzbuzz():
         if number:
             print(i, end='')
         print(' ', end='')
-
-fizzbuzz()
