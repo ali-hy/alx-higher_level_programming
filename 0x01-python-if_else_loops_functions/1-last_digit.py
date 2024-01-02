@@ -2,10 +2,12 @@
 import random
 number = random.randint(-10000, 10000)
 
+
 def get_last_dig(num):
     if num >= 0:
         return num % 10
     return -((-num) % 10)
+
 
 note = ''
 if number == 0:
