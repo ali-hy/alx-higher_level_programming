@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-hidden = __import__("4-hidden_discovery.pyc")
+import hidden_4
 
 if __name__ == "__main__":
-    for name in dir(hidden):
+    for name in dir(hidden_4):
         print(name)
