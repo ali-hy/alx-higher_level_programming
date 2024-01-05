@@ -6,7 +6,7 @@ if __name__ == "__main__":
     if len(argv) != 4:
         print("Usage: {} <a> <operator> <b>".format(argv[0]))
         exit(1)
-    
+
     operations = {
         '+': add,
         '-': sub,
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     a = int(argv[1])
     op = argv[2]
     b = int(argv[3])
-    
+
     if op not in operations:
         print('Unknown operator. Available operators: +, -, * and /')
         exit(1)
