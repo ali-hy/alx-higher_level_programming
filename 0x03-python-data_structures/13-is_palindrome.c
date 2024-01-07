@@ -30,7 +30,6 @@ int cmp_lists(listint_t *head1, listint_t *head2)
 {
 	while (head1 != NULL && head2 != NULL)
 	{
-		printf("cmp loop :D\n");
 		if (head1->n != head2->n)
 			return (head1 - head2);
 		head1 = head1->next;
@@ -57,7 +56,6 @@ int is_palindrome(listint_t **head)
 	while (curr != NULL)
 	{
 		size++;
-		printf("size loop (%d) :D\n", size);
 		curr = curr->next;
 	}
 
@@ -66,7 +64,6 @@ int is_palindrome(listint_t **head)
 	mid = size / 2;
 	while (i < mid)
 	{
-		printf("to mid loop :D\n");
 		add_nodeint_start(&inverse, curr->n);
 		curr = curr->next;
 		i++;
