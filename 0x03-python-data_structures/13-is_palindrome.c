@@ -43,41 +43,32 @@ int cmp_lists(listint_t *head1, listint_t *head2)
 	return (-head2->n);
 }
 
-/**
- * is_palindrome - check if a linked list is a palindrome
- * @head: pointer to head of list
- * Return: 1 if palindrome, 0 otherwise
- */
 int is_palindrome(listint_t **head)
 {
-	listint_t *curr = *head, *inverse = NULL;
-	int size = 0, i = 0, odd = 0, mid = 0;
+	listint_t *slow = *head, *fast = *head, *prev = NULL, *next_node;
 
-	while (curr != NULL)
-	{
-		size++;
-		curr = curr->next;
-	}
-
-	curr = *head;
-	odd = size % 2;
-	mid = size / 2;
-	while (i < mid)
-	{
-		add_nodeint_start(&inverse, curr->n);
-		curr = curr->next;
-		i++;
-	}
-
-	if (odd && curr)
-		curr = curr->next;
-
-	if (cmp_lists(curr, inverse) == 0)
-	{
-		free_listint(inverse);
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
+
+	while (fast != NULL && fast->next != NULL)
+	{
+		fast = fast->next->next;
+		next_node = slow->next;
+		slow->next = prev;
+		prev = slow;
+		slow = next_node;
 	}
 
-	free_listint(inverse);
-	return (0);
+	if (fast != NULL)
+		slow = slow->next;
+
+	while (prev != NULL)
+	{
+		if (prev->n != slow->n)
+			return (0);
+		prev = prev->next;
+		slow = slow->next;
+	}
+
+	return (1);
 }
