@@ -73,7 +73,11 @@ int is_palindrome(listint_t **head)
 		curr = curr->next;
 
 	if (cmp_lists(curr, inverse) == 0)
+	{
+		free_listint(inverse);
 		return (1);
+	}
 
+	free_listint(inverse);
 	return (0);
 }
