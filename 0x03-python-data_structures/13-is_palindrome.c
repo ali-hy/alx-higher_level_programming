@@ -43,6 +43,11 @@ int cmp_lists(listint_t *head1, listint_t *head2)
 	return (-head2->n);
 }
 
+/**
+ * is_palindrome - check if a linked list is a palindrome
+ * @head: pointer to head of list
+ * Return: 1 if palindrome, 0 otherwise
+ */
 int is_palindrome(listint_t **head)
 {
 	listint_t *slow = *head, *fast = *head, *prev = NULL, *next_node;
