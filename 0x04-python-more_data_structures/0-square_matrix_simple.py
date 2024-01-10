@@ -2,8 +2,9 @@
 def square_matrix_simple(matrix=[]):
     if len(matrix) == 0:
         return;
-    
+
     return list(map(lambda row: list( map(lambda n: n*n , row)), matrix))
+
 
 if __name__ == '__main__':
     matrix = [
