@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
-    res = dict(a_dictionary)
-    res[key] = value
-    return res
+    a_dictionary[key] = value
+    return a_dictionary 
 
 
 if __name__ == '__main__':
