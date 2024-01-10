@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
     if len(matrix) == 0:
-        return;
+        return
 
-    return list(map(lambda row: list( map(lambda n: n*n , row)), matrix))
+    return list(map(lambda row: list(map(lambda n: n*n, row)), matrix))
 
 
 if __name__ == '__main__':
