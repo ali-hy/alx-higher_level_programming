@@ -11,7 +11,8 @@ def safe_print_list_integers(my_list=[], x=0):
             break
     print('')
     return count
-    
+
+
 if __name__ == '__main__':
     my_list = [1, 2, 3, 4, 5]
 
