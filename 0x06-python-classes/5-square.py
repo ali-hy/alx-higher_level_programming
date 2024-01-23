@@ -34,4 +34,4 @@ class Square:
             return
 
         for i in range(self.size):
-            print('#'*i)
+            print('#'*self.size)
