@@ -27,16 +27,16 @@ class Square:
         elif val < 0:
             raise ValueError("size must be >= 0")
         self.__size = val
-    
+
     @property
     def position(self):
         """access position"""
         return self.__position
-    
+
     @position.setter
     def position(self, val):
         """set position"""
-        if len(val) != 2 or val[0] < 0 or  val[1] < 0:
+        if not isinstance(val, tuple) or len(val) != 2 or val[0] < 0 or  val[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = val
 
