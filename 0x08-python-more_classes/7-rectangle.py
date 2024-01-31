@@ -80,4 +80,8 @@ print("--")
 my_rectangle_3.print_symbol = ["C", "is", "fun!"]
 print(my_rectangle_3)
 
+myrectangle1 = Rectangle(8, 4)
+myrectangle1.printsymbol = ['Holberton', 'School']
+print(myrectangle1)
+
 print("--")
