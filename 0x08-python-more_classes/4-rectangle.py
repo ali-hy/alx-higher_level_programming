@@ -47,3 +47,6 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ''
         return (('#' * self.width) + '\n') * self.height
+
+    def __rep__(self) -> str:
+        return 'Rectangle(self.width, self.height)'
