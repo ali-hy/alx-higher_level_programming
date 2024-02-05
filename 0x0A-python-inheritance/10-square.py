@@ -39,9 +39,12 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
+    '''docs you dumbum'''
     def __init__(self, size):
         self.integer_validator('size', size)
         self.__size = size
+        self.__width = self.__size
+        self.__height = self.__size
 
     def area(self):
         return self.__size * self.__size
