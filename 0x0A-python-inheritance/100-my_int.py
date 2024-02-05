@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''my rebelious int'''
 
+
 class MyInt(int):
     '''switched eq and ne'''
     def __eq__(self, __value: object) -> bool:
