@@ -44,7 +44,7 @@ Check integer that doesn't meet either condition:
     >>> bg.integer_validator('stuff', -34.56)
     Traceback (most recent call last):
     ...
-    ValueError: stuff must be greater than 0
+    TypeError: stuff must be an integer
 
 Check normal integer:
     >>> bg.integer_validator('stuff', 5)
