@@ -4,4 +4,6 @@
 
 def lookup(obj):
     '''get all attributes and methods of a n object'''
-    dir(obj)
+    return dir(obj)
+
+print(lookup('hehe lol'))
