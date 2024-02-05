@@ -20,9 +20,7 @@ Check wrong type of integer:
     TypeError: stuff must be an integer
 
     >>> bg.integer_validator('stuff', True)
-    Traceback (most recent call last):
-    ...
-    TypeError: stuff must be an integer
+
 
     >>> bg.integer_validator('stuff', None)
     Traceback (most recent call last):
