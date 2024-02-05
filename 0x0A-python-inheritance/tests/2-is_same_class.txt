@@ -1,0 +1,8 @@
+
+    >>> is_same_class = __import__('2-is_same_class').is_same_class
+    >>> is_same_class(13, int)
+    True
+    >>> is_same_class(True, int)
+    False
+    >>> is_same_class('hehhe lmaoo', str)
+    True
