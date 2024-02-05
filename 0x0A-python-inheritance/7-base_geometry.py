@@ -12,7 +12,7 @@ class BaseGeometry:
         '''check if `value` is a valid integer
         name: name of this integer (for error message)
         value: value of integer (to validate)'''
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError('{} must be greater than 0'.format(name))
