@@ -19,6 +19,11 @@ Check wrong type of integer:
     ...
     TypeError: stuff must be an integer
 
+    >>> bg.integer_validator('stuff', True)
+    Traceback (most recent call last):
+    ...
+    TypeError: stuff must be an integer
+
 Check wrong integer value:
     >>> bg.integer_validator('stuff', 0)
     Traceback (most recent call last):
@@ -29,3 +34,7 @@ Check wrong integer value:
     Traceback (most recent call last):
     ...
     ValueError: stuff must be greater than 0
+
+Check normal integer:
+    >>> bg.integer_validator('stuff', 5)
+
