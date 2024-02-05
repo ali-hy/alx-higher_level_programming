@@ -1,5 +1,8 @@
 >>> MyList = __import__('1-my_list').MyList
 >>> x = MyList()
+>>> x.print_sorted()
+[]
+
 >>> x.append(1)
 >>> x.append(4)
 >>> x.append(2)
