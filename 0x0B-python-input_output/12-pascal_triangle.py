@@ -7,15 +7,19 @@ def pascal_triangle(n):
     if (n <= 0):
         return []
 
-    res = [1]
+    res = [[1]]
     n -= 1
 
     while n > 0:
-        new_res = list(res)
-        for i in range(1, len(new_res)):
-            new_res[i] = res[i] + res[i-1]
-        new_res.append(1)
-        res = new_res
+        new_level = list(res[-1])
+        for i in range(1, len(new_level)):
+            new_level[i] = res[-1][i] + res[-1][i-1]
+        new_level.append(1)
+        res.append(new_level)
         n -= 1
 
     return res
+
+
+if __name__ == '__main__':
+    print(pascal_triangle(5))
