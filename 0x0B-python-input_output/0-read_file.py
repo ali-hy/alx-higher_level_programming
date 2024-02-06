@@ -6,5 +6,4 @@ def read_file(filename=""):
     '''read all the entire file with the name <filename>'''
     res = ''
     with open(filename, 'r', encoding='utf-8') as f:
-        res = f.read()
-    return res
+        print(f.read())
