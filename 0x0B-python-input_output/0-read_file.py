@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''read file'''
 
+
 def read_file(filename=""):
     '''read all the entire file with the name <filename>'''
     res = ''

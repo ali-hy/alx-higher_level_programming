@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''read file'''
 
+
 def append_write(filename="", text=""):
     '''append <text> to file called <filename>'''
     res = 0
