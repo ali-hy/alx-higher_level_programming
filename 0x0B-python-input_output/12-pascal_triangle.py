@@ -19,6 +19,3 @@ def pascal_triangle(n):
         n -= 1
 
     return res
-
-for i in range(0, 10):
-    print(pascal_triangle(i))

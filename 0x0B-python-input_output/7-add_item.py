@@ -10,11 +10,13 @@ def save_to_json_file(my_obj, filename):
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(my_obj, f)
 
+
 def load_from_json_file(filename):
     '''load'''
     with open(filename, 'r', encoding='utf-8') as f:
         res = json.load(f)
     return res
+
 
 FILENAME = 'add_item.json'
 file_content = []
