@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import json
+'''read file'''
 from sys import argv
 from os import path
-'''read file'''
 
 
 def class_to_json(obj):
