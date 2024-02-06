@@ -19,3 +19,5 @@ class Student:
         return serializable
 
 s = Student('ali', 'haitham', 19)
+
+print(s.to_json())
