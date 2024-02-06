@@ -5,5 +5,5 @@ def read_file(filename=""):
     '''read all the entire file with the name <filename>'''
     res = ''
     with open(filename, 'r', encoding='utf-8') as f:
-        res = '\n'.join(f.readlines())
+        res = f.read()
     return res
