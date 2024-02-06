@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 '''read file'''
-from sys import argv
-from os import path
 
 
 class Student:
