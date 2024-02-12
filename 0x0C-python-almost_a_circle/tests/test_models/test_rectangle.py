@@ -204,5 +204,6 @@ class RectangleTest(unittest.TestCase):
 
         self.assertListEqual(rlist, [])
 
+
 if __name__ == '__main__':
     unittest.main()

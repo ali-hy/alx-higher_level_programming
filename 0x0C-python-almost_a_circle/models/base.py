@@ -79,7 +79,10 @@ class Base:
             writer = csv.writer(file)
             if cls.__name__ == 'Square':
                 attrs = ['id', 'size', 'x', 'y']
-                rows = map(lambda obj: [obj.id, obj.size, obj.x, obj.y], list_objs)
+                rows = map(
+                    lambda obj: [obj.id, obj.size, obj.x, obj.y],
+                    list_objs
+                )
             else:
                 attrs = ['id', 'width', 'height', 'x', 'y']
                 rows = map(
