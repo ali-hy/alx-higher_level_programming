@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 '''Module for the Square Class'''
-import sys
-import os
 from models.rectangle import Rectangle
 
 
