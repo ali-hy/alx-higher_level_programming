@@ -117,13 +117,10 @@ class Base:
         screen.setup(500, 500)
         pen = turtle.RawTurtle(screen)
 
-        def goto(x, y):
-            pen.goto(x - screen.window_width()/2,
-                     y - screen.window_height()/2)
         pen.up()
 
         for rect in list_rectangles:
-            goto(rect.x, rect.y)
+            pen.goto(rect.x, rect.y)
             pen.down()
             pen.fd(rect.width)
             pen.left(90)
@@ -135,7 +132,7 @@ class Base:
             pen.left(90)
             pen.up()
         for square in list_squares:
-            goto(square.x, square.y)
+            pen.goto(square.x, square.y)
             pen.down()
             pen.fd(square.size)
             pen.left(90)
