@@ -60,7 +60,10 @@ class Base:
     def load_from_file(cls):
         '''load list of objects from file for the same class'''
         dictionaries = []
-        with open(f'{cls.__name__}.json', 'r') as f:
-            dictionaries = Base.from_json_string(f.read())
+        try:
+            with open(f'{cls.__name__}.json', 'r') as f:
+                dictionaries = Base.from_json_string(f.read())
+        except NotADirectoryError as error:
+            return []
         res = [cls.create(**dictionary) for dictionary in dictionaries]
         return res
