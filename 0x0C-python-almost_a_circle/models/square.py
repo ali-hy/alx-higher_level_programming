@@ -11,6 +11,7 @@ class Square(Rectangle):
     '''Class representing a square'''
 
     def __init__(self, size, x=0, y=0, id=None):
+        '''create Square with attributes'''
         super().__init__(size, size, x, y, id)
 
     def update(self, *args, **kwargs):
@@ -30,6 +31,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        '''create a dictionary that represents the square'''
         return {
             'id': self.id,
             'size': self.size,
@@ -42,13 +44,16 @@ class Square(Rectangle):
         [Square] (<id>) <x>/<y> - <size>'''
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
 
-
     @property
     def size(self):
+        '''size of the square
+        range: must be > 0'''
         return self.width
 
     @size.setter
     def size(self, value):
+        '''size of the square
+        range: must be > 0'''
         self.width = value
         self.height = value
 
