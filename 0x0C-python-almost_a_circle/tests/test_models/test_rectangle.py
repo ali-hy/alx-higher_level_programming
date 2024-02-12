@@ -168,7 +168,6 @@ class RectangleTest(unittest.TestCase):
         res = '[Rectangle] (94) 0/0 - 1/1\n'
         self.assertEqual(mock_stdout.getvalue(), res)
 
-
     def test_save(self):
         r1 = Rectangle(5, 6, 8, 4, 98)
         r2 = Rectangle(3, 5, 1, 5, 99)
@@ -179,6 +178,31 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r1.__dict__, rlist[0].__dict__)
         self.assertEqual(r2.__dict__, rlist[1].__dict__)
 
+    def test_load(self):
+        FILE = 'Rectangle.json'
+        if os.path.exists(FILE):
+            os.remove(FILE)
+        rlist = Rectangle.load_from_file()
+
+        self.assertListEqual(rlist, [])
+
+    def test_save_csv(self):
+        r1 = Rectangle(5, 6, 8, 4, 98)
+        r2 = Rectangle(3, 5, 1, 5, 99)
+
+        Rectangle.save_to_file_csv([r1, r2])
+
+        rlist = Rectangle.load_from_file_csv()
+        self.assertEqual(r1.__dict__, rlist[0].__dict__)
+        self.assertEqual(r2.__dict__, rlist[1].__dict__)
+
+    def test_load_csv(self):
+        FILE = 'Rectangle.csv'
+        if os.path.exists(FILE):
+            os.remove(FILE)
+        rlist = Rectangle.load_from_file_csv()
+
+        self.assertListEqual(rlist, [])
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for Base class"""
 import json
+import csv
 
 
 class Base:
@@ -52,10 +53,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         '''create an object of the same class using the dictionary values'''
-        if cls.__name__ == 'Rectangle':
-            obj = cls(1, 1)
-        elif cls.__name__ == 'Square':
+        if cls.__name__ == 'Square':
             obj = cls(1)
+        else:
+            obj = cls(1, 1)
         obj.update(**dictionary)
         return obj
 
@@ -69,4 +70,37 @@ class Base:
         except FileNotFoundError:
             return []
         res = [cls.create(**dictionary) for dictionary in dictionaries]
+        return res
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''save list of objects to a csv file'''
+        with open(f'{cls.__name__}.csv', 'w') as file:
+            writer = csv.writer(file)
+            if cls.__name__ == 'Square':
+                attrs = ['id', 'size', 'x', 'y']
+                rows = map(lambda obj: [obj.id, obj.size, obj.x, obj.y], list_objs)
+            else:
+                attrs = ['id', 'width', 'height', 'x', 'y']
+                rows = map(
+                    lambda obj: [obj.id, obj.width, obj.height, obj.x, obj.y],
+                    list_objs
+                )
+            writer.writerow(attrs)
+            writer.writerows(rows)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '''load list of objects to a csv file'''
+        res = []
+        try:
+            with open(f'{cls.__name__}.csv') as file:
+                reader = csv.DictReader(file)
+                for dictionary in reader:
+                    dictionary = {
+                        k: int(v) for k, v in dictionary.items()
+                    }
+                    res.append(cls.create(**dictionary))
+        except FileNotFoundError:
+            return []
         return res
