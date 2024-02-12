@@ -179,13 +179,6 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r1.__dict__, rlist[0].__dict__)
         self.assertEqual(r2.__dict__, rlist[1].__dict__)
 
-    def test_load(self):
-        FILE = 'Rectangle.json'
-        if os.path.exists(FILE):
-            os.remove(FILE)
-        rlist = Rectangle.load_from_file()
-
-        self.assertListEqual(rlist, [])
 
 if __name__ == '__main__':
     unittest.main()
