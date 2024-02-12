@@ -24,14 +24,14 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries=[]):
         '''Turn list of dictionaries into a json-format string'''
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string=''):
         '''Get a list of dictionaries from a json-format string'''
-        if json_string == None or json_string == '':
+        if json_string is None or json_string == '':
             json_string = '[]'
         return json.loads(json_string)
 
@@ -39,7 +39,7 @@ class Base:
     def save_to_file(cls, list_objs=[]):
         '''save a list of objects to a file as json-format string
         that represents a list of dictionaries'''
-        if list_objs == None:
+        if list_objs is None:
             list_objs = []
         if not all(map(lambda obj: isinstance(obj, cls), list_objs)):
             raise TypeError(

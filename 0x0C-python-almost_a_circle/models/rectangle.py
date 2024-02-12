@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 '''Module for the Rectangle Class'''
-import os
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 from models.base import Base
 
+
 class Rectangle(Base):
-    '''Basic Rectangle'''
+    '''Basic Rectangle
+    Represents a rectangle with 4 main attributes:
+    width, height, x, y'''
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -130,4 +129,3 @@ class Rectangle(Base):
         range: must be >= 0'''
         Rectangle.assertIsNonNegativeInteger(value, 'y')
         self.__y = value
-

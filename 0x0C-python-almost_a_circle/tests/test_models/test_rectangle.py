@@ -2,11 +2,7 @@
 """Test for the Rectangle class"""
 import unittest
 from unittest.mock import patch
-import sys
-import os
 import io
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 from models.rectangle import Rectangle
 
 
@@ -45,13 +41,17 @@ class RectangleTest(unittest.TestCase):
         self.assertRaises(TypeError,
                           lambda: Rectangle.assertIsInteger(0.1, 'num'))
         self.assertRaises(TypeError,
-                          lambda: Rectangle.assertIsNonNegativeInteger(0.1, 'num'))
+                          lambda: Rectangle.assertIsNonNegativeInteger(
+                              0.1, 'num'))
         self.assertRaises(TypeError,
-                          lambda: Rectangle.assertIsPositiveInteger(0.1, 'num'))
+                          lambda: Rectangle.assertIsPositiveInteger(
+                              0.1, 'num'))
         self.assertRaises(ValueError,
-                          lambda: Rectangle.assertIsPositiveInteger(0, 'num'))
+                          lambda: Rectangle.assertIsPositiveInteger(
+                              0, 'num'))
         self.assertRaises(ValueError,
-                          lambda: Rectangle.assertIsNonNegativeInteger(-1, 'num'))
+                          lambda: Rectangle.assertIsNonNegativeInteger(
+                              -1, 'num'))
 
     def test_widthHeightErrors(self):
         '''test for errors raised on invalid width and height input'''
@@ -146,7 +146,8 @@ class RectangleTest(unittest.TestCase):
                          + '[Rectangle] (89) 10/10 - 2/10\n'
                          + '[Rectangle] (89) 10/10 - 2/3\n'
                          + '[Rectangle] (89) 4/10 - 2/3\n'
-                         + '[Rectangle] (89) 4/5 - 2/3\n', mock_stdout.getvalue())
+                         + '[Rectangle] (89) 4/5 - 2/3\n',
+                         mock_stdout.getvalue())
 
     def test_dictionary(self):
         r = Rectangle(3, 5, 6, 2, 94)

@@ -2,11 +2,7 @@
 """Test for the Square class"""
 import unittest
 from unittest.mock import patch
-import sys
-import os
 import io
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 from models.square import Square
 
 
@@ -84,6 +80,7 @@ class SquareTest(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_update(self, mock_stdout):
+        '''test update method'''
         r1 = Square(10, 10, 10, 10)
         print(r1)
 
@@ -126,6 +123,7 @@ class SquareTest(unittest.TestCase):
                          + '[Square] (89) 3/4 - 2\n', mock_stdout.getvalue())
 
     def test_dictionary(self):
+        '''test to_dictionary method'''
         r = Square(3, 6, 2, 94)
         self.assertIsInstance(r.to_dictionary(), dict)
         self.assertEqual(r.to_dictionary(), {

@@ -2,8 +2,6 @@
 '''Module for the Square Class'''
 import sys
 import os
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from models.rectangle import Rectangle
 
 
@@ -56,6 +54,7 @@ class Square(Rectangle):
         range: must be > 0'''
         self.width = value
         self.height = value
+
 
 if __name__ == '__main__':
     s = Square(5)
