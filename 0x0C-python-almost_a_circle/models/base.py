@@ -66,7 +66,7 @@ class Base:
         try:
             with open(f'{cls.__name__}.json', 'r') as f:
                 dictionaries = Base.from_json_string(f.read())
-        except NotADirectoryError as error:
+        except FileNotFoundError:
             return []
         res = [cls.create(**dictionary) for dictionary in dictionaries]
         return res
