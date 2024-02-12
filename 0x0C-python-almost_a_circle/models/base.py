@@ -45,7 +45,7 @@ class Base:
             raise TypeError(
                 f"all objects in list_objs should be of type {cls}"
             )
-        with open(f'{cls.__name__} .json', 'w') as f:
+        with open(f'{cls.__name__}.json', 'w') as f:
             list_dictionaries = [obj.to_dictionary() for obj in list_objs]
             f.write(Base.to_json_string(list_dictionaries))
 
@@ -54,6 +54,7 @@ class Base:
         '''create an object of the same class using the dictionary values'''
         obj = cls(1, 1)
         obj.update(**dictionary)
+        return obj
 
     @classmethod
     def load_from_file(cls):
@@ -61,5 +62,5 @@ class Base:
         dictionaries = []
         with open(f'{cls.__name__}.json', 'r') as f:
             dictionaries = Base.from_json_string(f.read())
-        res = [cls.create(dictionary) for dictionary in dictionaries]
+        res = [cls.create(**dictionary) for dictionary in dictionaries]
         return res

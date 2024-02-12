@@ -160,6 +160,24 @@ class RectangleTest(unittest.TestCase):
             'y': 2
         })
 
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_create(self, mock_stdout):
+        print(Rectangle.create(id=94))
+
+        res = '[Rectangle] (94) 0/0 - 1/1\n'
+        self.assertEqual(mock_stdout.getvalue(), res)
+
+
+    def test_save(self):
+        r1 = Rectangle(5, 6, 8, 4, 98)
+        r2 = Rectangle(3, 5, 1, 5, 99)
+
+        Rectangle.save_to_file([r1, r2])
+
+        rlist = Rectangle.load_from_file()
+        self.assertEqual(r1.__dict__, rlist[0].__dict__)
+        self.assertEqual(r2.__dict__, rlist[1].__dict__)
+
 
 if __name__ == '__main__':
     unittest.main()
