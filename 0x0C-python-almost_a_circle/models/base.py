@@ -23,18 +23,22 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries=[]):
+        '''Turn list of dictionaries into a json-format string'''
         if list_dictionaries == None:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string=''):
+        '''Get a list of dictionaries from a json-format string'''
         if json_string == None or json_string == '':
             json_string = '[]'
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs=[]):
+        '''save a list of objects to a file as json-format string
+        that represents a list of dictionaries'''
         if list_objs == None:
             list_objs = []
         if not all(map(lambda obj: isinstance(obj, cls), list_objs)):
@@ -47,11 +51,13 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        '''create an object of the same class using the dictionary values'''
         obj = cls(1, 1)
         obj.update(**dictionary)
 
     @classmethod
     def load_from_file(cls):
+        '''load list of objects from file for the same class'''
         dictionaries = []
         with open(f'{cls.__name__}.json', 'r') as f:
             dictionaries = Base.from_json_string(f.read())

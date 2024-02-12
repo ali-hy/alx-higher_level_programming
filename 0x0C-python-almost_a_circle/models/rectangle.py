@@ -41,6 +41,7 @@ class Rectangle(Base):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        '''create a dictionary that represents Rectangle object'''
         return {
             'id': self.id,
             'width': self.width,
@@ -80,37 +81,53 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        '''width of the rectangle
+        range: must be > 0'''
         return self.__width
 
     @width.setter
     def width(self, value):
+        '''width of the rectangle
+        range: must be > 0'''
         Rectangle.assertIsPositiveInteger(value, 'width')
         self.__width = value
 
     @property
     def height(self):
+        '''height of the rectangle
+        range: must be > 0'''
         return self.__height
 
     @height.setter
     def height(self, value):
+        '''height of the rectangle
+        range: must be > 0'''
         Rectangle.assertIsPositiveInteger(value, 'height')
         self.__height = value
 
     @property
     def x(self):
+        '''x cooridnate of the rectangle
+        range: must be >= 0'''
         return self.__x
 
     @x.setter
     def x(self, value):
+        '''x coordinate of the rectangle
+        range: must be >= 0'''
         Rectangle.assertIsNonNegativeInteger(value, 'x')
         self.__x = value
 
     @property
     def y(self):
+        '''y coordinate of the rectangle
+        range: must be >= 0'''
         return self.__y
 
     @y.setter
     def y(self, value):
+        '''y coordinate of the rectangle
+        range: must be >= 0'''
         Rectangle.assertIsNonNegativeInteger(value, 'y')
         self.__y = value
 
