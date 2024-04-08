@@ -7,8 +7,6 @@ if (nums.length < 2) {
   process.exit();
 }
 
-console.log('nums: ', nums);
-
 let m1 = nums[0]; let m2 = nums[0];
 for (const n of nums) {
   if (n > m1) {
