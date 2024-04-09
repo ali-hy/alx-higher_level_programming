@@ -7,10 +7,7 @@ class Rectangle {
     this.height = h;
   }
 
-  charPrint (c) {
-    if (c === undefined) {
-      c = 'X';
-    }
+  charPrint (c = 'X') {
     let res = '';
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
