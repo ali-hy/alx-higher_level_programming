@@ -49,6 +49,10 @@ class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
+
+  charPrint (c = 'X') {
+    super.charPrint(c);
+  }
 }
 
 module.exports = Square;
