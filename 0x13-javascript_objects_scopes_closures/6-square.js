@@ -7,6 +7,22 @@ class Rectangle {
     this.height = h;
   }
 
+  charPrint (c) {
+    if (c === undefined) {
+      c = 'X';
+    }
+    let res = '';
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
+        res += c;
+      }
+      if (i < this.height - 1) {
+        res += '\n';
+      }
+    }
+    console.log(res);
+  }
+
   print () {
     let res = '';
     for (let i = 0; i < this.height; i++) {
@@ -35,22 +51,6 @@ class Rectangle {
 class Square extends Rectangle {
   constructor (size) {
     super(size, size);
-  }
-
-  charPrint (c) {
-    if (c === undefined) {
-      c = 'X';
-    }
-    let res = '';
-    for (let i = 0; i < this.height; i++) {
-      for (let j = 0; j < this.width; j++) {
-        res += c;
-      }
-      if (i < this.height - 1) {
-        res += '\n';
-      }
-    }
-    console.log(res);
   }
 }
 
