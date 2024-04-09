@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const Square = require("./5-square");
+const Square = require('./5-square');
 
 module.exports = class extends Square {
   constructor (size) {
@@ -19,6 +19,4 @@ module.exports = class extends Square {
     }
     console.log(res);
   }
-}
-
-
+};
