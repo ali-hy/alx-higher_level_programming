@@ -16,9 +16,8 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    for val in session.query(State, City).\
-        join(State.cities).filter(State.id == City.state_id).\
-        group_by(State.id):
+    for val in session.query(State).\
+        join(State.cities).group_by(State).order_by(State.id, City.id):
             print(val)
 
     session.close()
