@@ -15,9 +15,6 @@ if __name__ == '__main__':
                 WHERE states.name = "{}"
                 ORDER BY states.id;'''.format(argv[4]))
 
-    if not cur.rowcount:
-        exit(1)
-
     for _ in range(cur.rowcount):
         print(cur.fetchone())
 
