@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Script that filters states by the name entered in the command but safely'''
 import MySQLdb
 from sys import argv
 

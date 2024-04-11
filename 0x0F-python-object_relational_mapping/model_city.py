@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-'''file that contains the class definition of a
-State and an instance Base = declarative_base()'''
+'''file that contains the class definition of a City'''
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from model_state import Base, State
 
 
 class City(Base):
-    '''declerative State class'''
+    '''declerative City class'''
     __tablename__ = "cities"
 
     id = Column(Integer, primary_key=True, autoincrement=True)

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Script that gets all cities in a certain state (entered as arg)'''
 import MySQLdb
 from sys import argv
 

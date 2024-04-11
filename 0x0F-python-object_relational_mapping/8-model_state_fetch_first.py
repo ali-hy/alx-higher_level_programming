@@ -21,4 +21,4 @@ if __name__ == "__main__":
         exit(0)
 
     print(f'{first_state.id}: {first_state.name}')
-    session.close();
+    session.close()

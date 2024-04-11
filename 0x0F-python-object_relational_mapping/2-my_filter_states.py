@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Script that selects all states matching a name entered in the command'''
 import MySQLdb
 from sys import argv
 
