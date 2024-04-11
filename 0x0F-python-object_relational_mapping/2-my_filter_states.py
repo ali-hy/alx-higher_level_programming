@@ -16,7 +16,7 @@ if __name__ == '__main__':
                 ORDER BY states.id;'''.format(argv[4]))
 
     for _ in range(cur.rowcount):
-        print(cur.fetchone());
+        print(cur.fetchone())
 
     cur.close()
     db.close()
