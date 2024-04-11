@@ -12,12 +12,11 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute('''SELECT * FROM states
-                WHERE states.name = '{}'
+                WHERE states.name LIKE BINARY '{}'
                 ORDER BY states.id;'''.format(argv[4]))
 
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    for _ in range(cur.rowcount):
+        print(cur.fetchone());
 
     cur.close()
     db.close()
