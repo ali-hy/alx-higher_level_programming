@@ -16,9 +16,9 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id):
-        print(f'{state.id}: {state.name}')
-        for city in sorted(state.cities, key=lambda c: c.id):
-            print(f'\t{city.id}: {city.name}')
+    for val in session.query(State, City).\
+        join(State.cities).filter(State.id == City.state_id).\
+        group_by(State.id):
+            print(val)
 
     session.close()
