@@ -11,9 +11,9 @@ if __name__ == '__main__':
     )
 
     cur = db.cursor()
-    cur.execute('SELECT * FROM states '
-                + f'WHERE states.name = "{argv[4]}" '
-                + 'ORDER BY states.id;')
+    cur.execute('''SELECT * FROM states
+                WHERE states.name = "{}"
+                ORDER BY states.id;'''.format(argv[4]))
 
     if not cur.rowcount:
         exit(1)
