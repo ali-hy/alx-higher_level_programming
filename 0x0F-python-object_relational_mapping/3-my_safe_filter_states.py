@@ -11,9 +11,9 @@ if __name__ == '__main__':
     )
 
     cur = db.cursor()
-    cur.execute('SELECT * FROM states '
-                + 'WHERE states.name = %s '
-                + 'ORDER BY states.id;', (argv[4], ))
+    cur.execute('''SELECT * FROM states
+                WHERE states.name LIKE BINARY %s
+                ORDER BY states.id;''', (argv[4], ))
 
     if not cur.rowcount:
         exit(1)
