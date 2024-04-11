@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-'''This script prints a list of all states in the given database'''
 import MySQLdb
 from sys import argv
 
@@ -11,7 +10,10 @@ if __name__ == '__main__':
     )
 
     cur = db.cursor()
-    cur.execute('SELECT * FROM states ORDER BY states.id;')
+    cur.execute('''SELECT cities.id, cities.name, states.name
+                 FROM cities
+                LEFT JOIN states ON cities.state_id = states.id
+                ORDER BY cities.id;''')
 
     for _ in range(cur.rowcount):
         print(cur.fetchone())
