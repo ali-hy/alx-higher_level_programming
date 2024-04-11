@@ -15,7 +15,8 @@ if __name__ == '__main__':
                 WHERE states.name = '{}'
                 ORDER BY states.id;'''.format(argv[4]))
 
-    for _ in range(cur.rowcount):
-        print(cur.fetchone())
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
     db.close()
