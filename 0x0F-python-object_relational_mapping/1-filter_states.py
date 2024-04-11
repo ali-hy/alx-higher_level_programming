@@ -16,10 +16,6 @@ if __name__ == '__main__':
                 WHERE states.name LIKE "N%"
                 ORDER BY states.id;''')
 
-    if not cur.rowcount:
-        db.close()
-        exit(1)
-
     for _ in range(cur.rowcount):
         print(cur.fetchone())
 
