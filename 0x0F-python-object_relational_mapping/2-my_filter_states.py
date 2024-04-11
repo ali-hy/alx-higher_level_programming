@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute('''SELECT * FROM states
-                WHERE states.name = "{}"
+                WHERE states.name = '{}'
                 ORDER BY states.id;'''.format(argv[4]))
 
     for _ in range(cur.rowcount):
