@@ -18,4 +18,6 @@ class City(Base):
     def __repr__(self):
         return f'({self.id}, {self.name}, {self.state.name})'
 
-State.cities = relationship('City', back_populates="state", cascade="all, delete, delete-orphan")
+
+State.cities = relationship(
+    'City', back_populates="state", cascade="all, delete, delete-orphan")
