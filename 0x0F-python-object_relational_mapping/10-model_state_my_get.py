@@ -14,7 +14,8 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    res = session.query(State.id).filter(State.name == sys.argv[4]).one_or_none()
+    res = session.query(State.id)\
+        .filter(State.name == sys.argv[4]).one_or_none()
     print(res[0] if res is not None else 'Not found')
 
     session.close()
