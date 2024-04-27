@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script sends a POST request to the URL passed as the first argument
-curl -s -o /dev/null -w "%{http_code}" -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" "$1"
+curl -s -o /dev/null -w "%{http_code}\n" "$1"
