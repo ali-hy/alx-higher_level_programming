@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script sends a POST request to the URL passed as the first argument
-curl -s -o /dev/null -w "%{http_code}\n" "$1"
+# this is a script prints the http after making a response to the specified URL
+curl -s -o /dev/null -w "%{http_code}" "$1"
