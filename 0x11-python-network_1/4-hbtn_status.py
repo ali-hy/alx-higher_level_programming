@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Fetch data from https://alx-intranet.hbtn.io/status'''
 import requests
 
 
