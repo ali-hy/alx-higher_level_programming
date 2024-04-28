@@ -3,6 +3,7 @@
 import requests
 import sys
 
+
 if __name__ == "__main__":
     url = "https://api.github.com/users/{}".format(sys.argv[1])
     password = sys.argv[2]
