@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Fetches the X-Request-Id from a URL'''
 import requests
 import sys
 
