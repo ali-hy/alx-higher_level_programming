@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Send a POST request with a letter as a parameter'''
 import requests
 import sys
 
